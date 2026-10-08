@@ -1,6 +1,6 @@
 cask "taigikeyboard" do
-  version "3.6.9"
-  sha256 "ea77e1e1530556a716feec62c14bb9db2e2f3814616a308a7c62631b6f12708a"
+  version "3.7.0"
+  sha256 "08f0adbd913fd5e50098b2359245f1ea0305bd9b000bc951abe03600e5ec3d02"
 
   url "https://github.com/taigikeyboard/taigikeyboard/releases/download/desktop-#{version}/TaigiKeyboard-#{version}.pkg"
   name "TaigiKeyboard"
