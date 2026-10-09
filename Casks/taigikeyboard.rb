@@ -2,7 +2,9 @@ cask "taigikeyboard" do
   version "3.7.0"
   sha256 "08f0adbd913fd5e50098b2359245f1ea0305bd9b000bc951abe03600e5ec3d02"
 
-  url "https://github.com/taigikeyboard/taigikeyboard/releases/download/desktop-#{version}/TaigiKeyboard-#{version}.pkg"
+  # Served from the project's Cloudflare R2 mirror (GitHub release assets are
+  # slow on some Taiwanese ISPs); the same bytes as the GitHub release asset.
+  url "https://dl.taigikeyboard.tw/desktop/TaigiKeyboard-#{version}.pkg"
   name "TaigiKeyboard"
   desc "Taiwanese input method (POJ / TL / TPS, Hanji)"
   homepage "https://github.com/taigikeyboard/taigikeyboard"
@@ -10,7 +12,7 @@ cask "taigikeyboard" do
   # Desktop releases share one tag across macOS / Windows / Linux, and some are
   # platform-only patches. Only a published release carrying a macOS .pkg counts.
   livecheck do
-    url :url
+    url "https://github.com/taigikeyboard/taigikeyboard"
     regex(/^TaigiKeyboard[._-]v?(\d+(?:\.\d+)+)\.pkg$/i)
     strategy :github_releases do |json, regex|
       json.map do |release|
